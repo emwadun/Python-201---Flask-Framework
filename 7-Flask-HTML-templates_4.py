@@ -1,29 +1,32 @@
 '''
 - You can also write some python code in html template. This is nice.
-- our example in html is now:
+- our example in index3.html is now, we will print a list that will be passed from flask app:
 
+<!doctype html>
+<html>
+    <head>
+        <title>Home Page</title> 
+    </head>
     <body>
         <h1>Home Page</h1>
-        {% for x in range(10) %}
-          {% if x % 2 == 1 %}
-             <p>{{x}}</p>
-          {% endif %}
-        {% endfor %}
+        {% for i in content %}
+             <p>{{i}}</p>
+        {% endfor%}
     </body>
+
+</html>
 
 
 This will print:
 
 Home Page
-1
+Duncan
 
-3
+Mike
 
-5
+Mel
 
-7
-
-9
+Jas
 
 '''
 
