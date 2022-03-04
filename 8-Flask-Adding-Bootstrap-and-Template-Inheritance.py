@@ -1,10 +1,12 @@
 '''
-* Here we will learn about template inheritance so that you dont have to repeat your code each time.
-* You can re-use. We will create a sort of a base template that every other of your template will use.
-* we will also add bootstrap on your website.
+* Here we will learn about template inheritance so that you dont' have to repeat your code each time.
+* You can re-use that base template. 
+  We will create a base template that every other of your web pages can use.
+* We will also add bootstrap on your website.
 * In other words we will make decent website without frameworks like React or Angular etc.
 
 STEP #1: We will create our base template known as base.html saved in templates folder example with below content:
+NOTE: block...endblock are key words!
 
 <!doctype html>
 <html>
@@ -51,6 +53,6 @@ def home():
 if __name__ == "__main__":
     app.run(debug=True)
 
-
+#Now lets check on adding boostrap on our website.
 
 

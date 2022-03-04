@@ -1,6 +1,6 @@
 '''
 - You can also write some python code in html template. This is nice.
-- our example in index3.html is now, we will print a list that will be passed from flask app:
+- Our example in index3.html is now, we will print a list that will be passed from flask app:
 
 <!doctype html>
 <html>

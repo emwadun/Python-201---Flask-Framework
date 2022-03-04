@@ -1,6 +1,8 @@
 
 '''
-You can read more about __name__ = "__main__" here: 
+* Lets see how to pass parameters
+* Lets also see how to redirect users to different web pages.
+* You can read more about __name__ = "__main__" here: 
 https://www.freecodecamp.org/news/if-name-main-python-example/
 
 '''

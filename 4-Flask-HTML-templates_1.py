@@ -1,10 +1,10 @@
 '''
-- we will use render_template function.
+- We will use render_template function.
 - This function helps to grab a html file and render it as our webpage.
 
-step 1: Create a folder named 'templates' it must be in same directory as your project.
-step 2: create html file(s) and save in it. lets create one named index.html
-step 3: lets render it as below
+step 1: Create a folder named 'templates' it must be named that way and it must be in same directory as your project.
+step 2: Create html file(s) and save in it. lets create one named index.html as an example.
+step 3: Lets render it as below
 
 
 '''
@@ -20,7 +20,6 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template("index.html") 
-
 
 
 if __name__ == "__main__":

@@ -1,4 +1,7 @@
 '''
+
+Ref Documentation: https://flask.palletsprojects.com/en/2.0.x/
+
 * Flask is simple python micro web framework i.e. for developing web applications.
   Django is heavy due to the many built in apps it come along with.
 
@@ -49,7 +52,6 @@ STEP 2: Install Flask:
 * Now lets create a hello word application to test all is fine with our setup.
 '''
 
-from xml.sax.handler import DTDHandler
 from flask import Flask          #--> Import flask
 
 app = Flask(__name__)            #--> Create an app instance
