@@ -1,15 +1,15 @@
 '''
 * Bootstrap is a CSS framework.
 * It is used to design and style in a fast way responsive websites.
+* It makes the website looks nicer.
+* Bootstrap is EASY!
 
 REF: 
     - https://getbootstrap.com/
 
     
-"Build fast, responsive sites with Bootstrap
-Quickly design and customize responsive mobile-first sites with Bootstrap, 
-the world’s most popular front-end open source toolkit, 
-featuring Sass variables and mixins, responsive grid system, 
+"Build fast, responsive sites with Bootstrap Quickly design and customize responsive mobile-first sites with Bootstrap, 
+the world’s most popular front-end open source toolkit,  featuring Sass variables and mixins, responsive grid system, 
 extensive prebuilt components, and powerful JavaScript plugins."
 
 WE will
@@ -31,8 +31,8 @@ STEP #2: Lets create a child template to use the base template as below. we will
 
 STEP #3: Now lets add some navbars from bootstap. On above link search 'navbars'.
    NOTE: We will copy one from: https://getbootstrap.com/docs/5.1/components/navbar/
-   and add in our head of our base template.
-   
+   and add in our body of our base template.
+
 STEP #3: Write out python code as below.
 
 STEO #4: On running the code and checking the page. below will be displayed:

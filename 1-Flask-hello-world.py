@@ -54,7 +54,7 @@ STEP 2: Install Flask:
 
 from flask import Flask          #--> Import flask
 
-app = Flask(__name__)            #--> Create an app instance
+app = Flask(__name__)            #--> Create an app instance from class Flask.
 
 @app.route("/")                  #--> At the endpoint /
 def hello():                     #--> Call method hello
