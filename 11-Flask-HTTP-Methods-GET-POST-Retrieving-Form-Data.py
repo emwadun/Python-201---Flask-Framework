@@ -1,5 +1,5 @@
 '''
-* Lets now retried the form data .
+* Lets now retrieve the form data .
 we will then use the data from the form to redirect user to user specific page.
 we will modify our code as below. 
 Our login.html remains the same i.e.
