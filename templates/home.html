@@ -1,0 +1,28 @@
+<!-- This is the front-end. User will input data in text box, and click Add to send data to backend code-->
+<!-- line 3 : HTTP POST method to send data to main page , i.e. / route which is the same we defined in out .py file. By default Flask routes accepts only GET requests -->
+<!-- line 4 : text input, this will associate any text input with name title -->
+<!-- line 5: a submit button with text Add shown on it-->
+
+<!-- 
+    Lines 9-12 loop through all of the books that we passed from the back-end code and display each 
+    title in a new HTML paragraph. Jinja's syntax is very similar to Python's, 
+    but it has some differences. We use 'curlbracket and percentage' to indicate that we're using a Jinja control 
+    pattern (in this case, a for loop), and we use 'doublecurly braces' to indicate that we're referring to a 
+    variable instead of a raw string. We also need to use 'curlbracket and percentage' endfor 'curlbracket and percentage' to close our for loop because, 
+    unlike Python, Jinja doesn't regard white space as significant. 
+-->
+<html>
+    <body>
+        <form method="POST" action="/">
+            <input type="text" name="title"/>
+            <input type="submit" value="Add">
+        </form>
+
+        <h1>Books</h1>
+        {% for book in books%}
+            <p>{{book.title}}</p>
+        {% endfor%}
+    </body>
+</html>
+
+

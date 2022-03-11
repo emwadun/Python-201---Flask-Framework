@@ -5,6 +5,8 @@ Ref Documentation: https://flask.palletsprojects.com/en/2.0.x/
 * Flask is simple python micro web framework i.e. for developing web applications.
   Django is heavy due to the many built in apps it come along with.
 
+* Flask is used to route web traffic through HTTP requests to specific functions in code base.
+
 * Flask is WSGI Framework:
   WSGI (Web Server Gateway Interface) is an interface between web servers and web apps for python.
 
