@@ -104,6 +104,7 @@ def home():
     #very time the user visits our web application, we want to get all of the current books out of the database and display them. 
     # SQLAlchemy makes it easy to load all of the books stored in our database into a Python variable. 
     # Here we retrieve all of the books just before the end of the home() function. we will update home.html template to render each of the books.
+    # R of the CRUD is also done we can read from the database!
     books = Book.query.all()
     return render_template("home.html", books=books)
 
