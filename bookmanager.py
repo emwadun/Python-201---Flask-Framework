@@ -7,7 +7,7 @@ REF:
 
 
 WE need:
-i - Flask,              ---> which we'll use to route web traffic through HTTP requests to specific functions in our code base
+i - Flask,              ---> which we'll use to route web traffic through HTTP requests (WSGI) to specific functions in our code base
 ii - SQLAlchemy,        ---> which we'll use to make the interaction between Python and our database smoother,
 iii - Flask-SQLAlchemy, ---> which we'll use to make the interaction between Flask and SQLAlchemy smoother.
 
@@ -53,6 +53,7 @@ import os
 from flask import Flask 
 from flask import render_template
 from flask import request
+from flask import redirect
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -120,7 +121,43 @@ After that you can test Adding book from GUI! We are now done with the C part of
 
 '''
 
+@app.route("/update", methods=["POST"])
+def update():
+    newtitle = request.form.get("newtitle")
+    oldtitle = request.form.get("oldtitle")
+    book = Book.query.filter_by(title=oldtitle).first()
+    book.title = newtitle
+    db.session.commit()
+    return redirect("/")
+
+'''
+This function is similar to the home() one, but instead of creating books, it
+
+- Gets the old and updated title from the form (lines 3-4)
+- Fetches the book with the old title from the database (line 5)
+- Updates that book's title to the new title (line 6)
+- Saves the book to the database (line 7)
+- Redirects the user the the main page
+
+You can test the app again. Now CRU done!
+'''
+
+@app.route("/delete", methods=["POST"])
+def delete():
+    title = request.form.get("title")
+    book = Book.query.filter_by(title=title).first()
+    db.session.delete(book)
+    db.session.commit()
+    return redirect("/")
+
+'''
+This is very similar to our /update route, but we use db.session.delete(book) on line 5 to remove the book from the database, 
+instead of updating its title.
+you can now test Delete. CRUD is complete. You can now create any web app.
+
+'''
 #We run our application behind an if guard. 
 #This will ensure that we don't start up web servers if we ever import this script into another one (we'll only run the web server if we run this file explicitly).
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
+

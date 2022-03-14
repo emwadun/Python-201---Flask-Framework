@@ -13,16 +13,46 @@
 -->
 <html>
     <body>
+        <h1>Add book</h1>
         <form method="POST" action="/">
             <input type="text" name="title"/>
             <input type="submit" value="Add">
         </form>
 
         <h1>Books</h1>
-        {% for book in books%}
-            <p>{{book.title}}</p>
-        {% endfor%}
+        <table>
+            {% for book in books%}
+                <p>{{book.title}}</p>
+                <form method="POST" action="./update">
+                    <input type="hidden" value="{{book.title}}" name="oldtitle">
+                    <input type="text" value="{{book.title}}" name="newtitle">
+                    <input type="submit" value="Update">
+                </form>
+                <form method="POST" action="./delete">
+                    <input type="hidden" value="{{book.title}}" name="title">
+                    <input type="submit" value="Delete">
+
+                </form>
+                
+            {% endfor%}
+        </table>
     </body>
 </html>
 
+<!--
+Updating existing data is the most complicated process. 
+Because we are only showing a representation of the data front-end, the user can't edit it directly. 
+Instead, we need our users to submit an updated title while we keep track of the old title. 
+Then, in our back-end code, we can retrieve the correct book based on the old title and update it to the title submitted by the user.
 
+Because the user won't want to type out the old title and the new one, we'll turn every title into its own form. 
+That way, when the user submits the new title, we can automatically get the old title as well. 
+We'll do this with a hidden HTML input so that we can retrieve the old title back-end without it cluttering up our UI front-end.
+
+The form is very similar to our previous form that we used to add new books. Some important differences are:
+
+On line 3, we specify that this form should post its data to the /update route, instead of to our base / route. 
+(We haven't defined the /update route yet. We'll do so).
+On line 4, we include a hidden input which is prepopulated with the book's "old" title. 
+This section of the form will not be shown to our user, but we'll be able to access the value from our Python code.
+-->
